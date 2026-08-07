@@ -1,1 +1,10 @@
 LexOps Demo
+Identity
+Client Management
+GST Integration
+Litigation
+AI
+Notification
+Reports
+Subscription
+Settings

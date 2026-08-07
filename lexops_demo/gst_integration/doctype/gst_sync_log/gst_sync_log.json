@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-07 15:16:08.570681",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "gst_registration",
+  "started_at__completed_at",
+  "status",
+  "notices_seen",
+  "new_notices",
+  "error_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "gst_registration",
+   "fieldtype": "Link",
+   "label": "GST Registration",
+   "options": "GST Registration"
+  },
+  {
+   "fieldname": "started_at__completed_at",
+   "fieldtype": "Datetime",
+   "label": "Started At / Completed At"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Success\nFailed\nConsent Required"
+  },
+  {
+   "fieldname": "notices_seen",
+   "fieldtype": "Int",
+   "label": "Notices Seen"
+  },
+  {
+   "fieldname": "new_notices",
+   "fieldtype": "Int",
+   "label": "New Notices"
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Long Text",
+   "label": "Error Log"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-07 15:18:18.893509",
+ "modified_by": "Administrator",
+ "module": "GST Integration",
+ "name": "GST Sync Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

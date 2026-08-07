@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:icai_membership_no",
+ "creation": "2026-08-07 09:46:37.736001",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "practice_name",
+  "ca_name",
+  "icai_membership_no",
+  "office_address",
+  "practice_gstin",
+  "primary_email",
+  "mobile_number",
+  "notice_inbox_address",
+  "letterhead_template",
+  "data_region",
+  "retention_policy",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "practice_name",
+   "fieldtype": "Data",
+   "label": "Practice Name"
+  },
+  {
+   "fieldname": "ca_name",
+   "fieldtype": "Data",
+   "label": "CA Name"
+  },
+  {
+   "fieldname": "icai_membership_no",
+   "fieldtype": "Data",
+   "label": "ICAI Membership No",
+   "unique": 1
+  },
+  {
+   "fieldname": "office_address",
+   "fieldtype": "Small Text",
+   "label": "Office Address"
+  },
+  {
+   "fieldname": "practice_gstin",
+   "fieldtype": "Data",
+   "label": "Practice GSTIN"
+  },
+  {
+   "fieldname": "primary_email",
+   "fieldtype": "Data",
+   "label": "Primary Email"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "notice_inbox_address",
+   "fieldtype": "Data",
+   "label": "Notice Inbox Address"
+  },
+  {
+   "fieldname": "letterhead_template",
+   "fieldtype": "Attach",
+   "label": "Letterhead Template"
+  },
+  {
+   "fieldname": "data_region",
+   "fieldtype": "Select",
+   "label": "Data Region",
+   "options": "India ap-south-1"
+  },
+  {
+   "fieldname": "retention_policy",
+   "fieldtype": "Select",
+   "label": "Retention Policy",
+   "options": "7 years\n10 years"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nSuspended\nCancelled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-07 14:12:59.033903",
+ "modified_by": "Administrator",
+ "module": "Identity",
+ "name": "Firm Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

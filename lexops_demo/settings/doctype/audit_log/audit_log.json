@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-07 16:34:18.202927",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type_name",
+  "changed_by",
+  "changed_on",
+  "change_detail"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type_name",
+   "fieldtype": "Data",
+   "label": "Document Type /Name"
+  },
+  {
+   "fieldname": "changed_by",
+   "fieldtype": "Link",
+   "label": "Changed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "changed_on",
+   "fieldtype": "Datetime",
+   "label": "Changed On"
+  },
+  {
+   "fieldname": "change_detail",
+   "fieldtype": "Text Editor",
+   "label": "Change Detail"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-07 16:35:18.023051",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Audit Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

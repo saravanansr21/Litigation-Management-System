@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-07 14:13:41.941356",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_name",
+  "short_name",
+  "client_code",
+  "pan",
+  "company_type",
+  "industry__sector",
+  "contact_person",
+  "email__phone",
+  "registered_address",
+  "status",
+  "onboarding_stage",
+  "onboarding_date",
+  "default_consultant",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name"
+  },
+  {
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "label": "Short Name"
+  },
+  {
+   "fieldname": "client_code",
+   "fieldtype": "Data",
+   "label": "Client Code"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN"
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "Pvt Ltd\nPublic Ltd\nLLP\nPartnership\nProprietorship"
+  },
+  {
+   "fieldname": "industry__sector",
+   "fieldtype": "Data",
+   "label": "Industry / Sector"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "email__phone",
+   "fieldtype": "Data",
+   "label": "Email / Phone"
+  },
+  {
+   "fieldname": "registered_address",
+   "fieldtype": "Small Text",
+   "label": "Registered Address"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nOnboarding"
+  },
+  {
+   "fieldname": "onboarding_stage",
+   "fieldtype": "Select",
+   "label": "Onboarding Stage",
+   "options": "Scoping call\nEngagement letter sent\nGSTIN authorization pending"
+  },
+  {
+   "fieldname": "onboarding_date",
+   "fieldtype": "Data",
+   "label": "Onboarding Date"
+  },
+  {
+   "fieldname": "default_consultant",
+   "fieldtype": "Link",
+   "label": "Default Consultant",
+   "options": "User"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-07 14:19:56.852683",
+ "modified_by": "Administrator",
+ "module": "Client Management",
+ "name": "Client",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
