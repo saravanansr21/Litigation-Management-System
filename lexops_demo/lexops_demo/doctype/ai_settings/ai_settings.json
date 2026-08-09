@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-07 15:58:24.987926",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "require_ca_approval",
+  "straight_through_confidence_threshold",
+  "draft_automatically",
+  "allow_curated_case_law_in_drafts",
+  "build_precedent_library",
+  "precedent_count"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "require_ca_approval",
+   "fieldtype": "Check",
+   "label": "Require CA Approval"
+  },
+  {
+   "fieldname": "straight_through_confidence_threshold",
+   "fieldtype": "Percent",
+   "label": "Straight Through Confidence Threshold"
+  },
+  {
+   "default": "0",
+   "fieldname": "draft_automatically",
+   "fieldtype": "Check",
+   "label": "Draft Automatically"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_curated_case_law_in_drafts",
+   "fieldtype": "Check",
+   "label": "Allow Curated Case Law in Drafts"
+  },
+  {
+   "default": "0",
+   "fieldname": "build_precedent_library",
+   "fieldtype": "Check",
+   "label": "Build Precedent Library"
+  },
+  {
+   "fieldname": "precedent_count",
+   "fieldtype": "Int",
+   "label": "Precedent Count"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-09 22:13:20.872461",
+ "modified_by": "Administrator",
+ "module": "LexOps Demo",
+ "name": "AI Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
