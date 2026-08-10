@@ -6,51 +6,46 @@
  "istable": 0,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
+ "naming_rule": "By fieldname",
+ "autoname": "field:form_code",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
+   "fieldname": "form_code",
+   "label": "Form Code",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "ASMT-10, DRC-01, DRC-01A, DRC-07, GSTR-3A, ADT-01, RFD-08, MOV-07, REG-17"
+  },
+  {
    "fieldname": "label",
    "label": "Label",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "description": "e.g. \"Show Cause Notice\", \"Scrutiny Notice\""
   },
   {
    "fieldname": "applicable_section",
    "label": "Applicable Section",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "e.g. Section 61, Section 73/74, Rule 142(1A), Section 129"
   },
   {
    "fieldname": "statutory_reply_window_days",
    "label": "Statutory Reply Window (Days)",
-   "fieldtype": "Int"
+   "fieldtype": "Int",
+   "description": "7 / 15 / 30 / 90 \u2014 drives Due Date calculation"
   },
   {
    "fieldname": "reply_form",
    "label": "Reply Form",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "e.g. ASMT-11, DRC-06, DRC-01A Part B, APL-01, RFD-09, REG-18"
   },
   {
    "fieldname": "description",
@@ -60,26 +55,22 @@
   {
    "fieldname": "registry_version",
    "label": "Registry Version",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "read_only": 1,
+   "description": "e.g. 2026.07"
   }
  ],
  "permissions": [
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
-   "if_owner": 0,
-   "import": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "select": 0,
    "share": 1,
-   "submit": 0,
    "write": 1,
    "permlevel": 0
   }

@@ -6,112 +6,133 @@
  "istable": 0,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
+ "naming_rule": "By fieldname",
+ "autoname": "field:notice_id",
+ "title_field": "notice_id",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
+   "fieldname": "notice_id",
+   "label": "Notice ID",
+   "fieldtype": "Data",
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Auto-generated composite: state code + financial year + form + sequence (e.g. MH2024DRC01001)"
+  },
+  {
    "fieldname": "client",
    "label": "Client",
    "fieldtype": "Link",
-   "options": "Client"
+   "options": "Client",
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "gst_registration",
    "label": "GST Registration",
    "fieldtype": "Link",
-   "options": "GST Registration"
+   "options": "GST Registration",
+   "reqd": 1
   },
   {
-   "fieldname": "notice_type__form",
+   "fieldname": "notice_type",
    "label": "Notice Type / Form",
-   "fieldtype": "Data"
+   "fieldtype": "Link",
+   "options": "Notice Type",
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "section",
    "label": "Section",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "read_only": 1,
+   "description": "Auto-filled from Notice Type"
   },
   {
    "fieldname": "financial_year",
    "label": "Financial Year",
-   "fieldtype": "Duration"
+   "fieldtype": "Select",
+   "options": "2021-22\n2022-23\n2023-24\n2024-25"
   },
   {
-   "fieldname": "issue__filed_date",
+   "fieldname": "issue_filed_date",
    "label": "Issue / Filed Date",
    "fieldtype": "Date"
   },
   {
    "fieldname": "due_date",
    "label": "Due Date",
-   "fieldtype": "Date"
+   "fieldtype": "Date",
+   "read_only": 1,
+   "description": "Auto-computed: Issue Date + statutory window from Notice Type"
   },
   {
    "fieldname": "reply_form",
    "label": "Reply Form",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "read_only": 1,
+   "description": "Auto-filled from Notice Type"
   },
   {
-   "fieldname": "tax_amount__interest__penalty",
-   "label": "Tax Amount / Interest / Penalty",
+   "fieldname": "tax_amount",
+   "label": "Tax Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "interest_amount",
+   "label": "Interest",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "penalty_amount",
+   "label": "Penalty",
    "fieldtype": "Currency"
   },
   {
    "fieldname": "total_demand",
    "label": "Total Demand",
-   "fieldtype": "Currency"
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "description": "Computed: sum of Tax Amount + Interest + Penalty"
   },
   {
    "fieldname": "risk_level",
    "label": "Risk Level",
    "fieldtype": "Select",
-   "options": "Critical\nHigh\nMedium\nLow"
+   "options": "Critical\nHigh\nMedium\nLow",
+   "in_list_view": 1
   },
   {
    "fieldname": "priority",
    "label": "Priority",
-   "fieldtype": "Data"
+   "fieldtype": "Select",
+   "options": "Low\nMedium\nHigh\nUrgent"
   },
   {
    "fieldname": "status",
    "label": "Status",
    "fieldtype": "Select",
-   "options": "Active\nUnder Review\nResponded\nHearing\nScheduled\nEscalated\nResolved"
+   "options": "Active\nUnder Review\nResponded\nHearing Scheduled\nEscalated\nResolved",
+   "in_list_view": 1,
+   "default": "Active"
   },
   {
    "fieldname": "workflow_stage",
    "label": "Workflow Stage",
    "fieldtype": "Select",
-   "options": "Notice Received\nAI Extracted\nReply Drafted\nReply Filed\nHearing Scheduled\nAdjudication\nFinal Order"
+   "options": "Notice Received\nAI Extracted\nReply Drafted\nReply Filed\nHearing Scheduled\nAdjudication\nFinal Order",
+   "default": "Notice Received"
   },
   {
-   "fieldname": "assigned_consultan",
-   "label": "Assigned Consultan",
+   "fieldname": "assigned_consultant",
+   "label": "Assigned Consultant",
    "fieldtype": "Link",
-   "options": "User"
+   "options": "Consultant"
   },
   {
    "fieldname": "ai_summary",
@@ -121,36 +142,70 @@
   {
    "fieldname": "original_notice",
    "label": "Original Notice",
-   "fieldtype": "Attach"
+   "fieldtype": "Attach",
+   "description": "Source PDF as received"
   },
   {
    "fieldname": "reply_document",
    "label": "Reply Document",
-   "fieldtype": "Attach"
+   "fieldtype": "Attach",
+   "description": "Final filed response PDF"
   },
   {
    "fieldname": "litigation_case",
    "label": "Litigation Case",
-   "fieldtype": "Data"
+   "fieldtype": "Link",
+   "options": "Litigation Case",
+   "description": "Set once this notice is grouped into a formal case"
+  },
+  {
+   "fieldname": "notice_attachments",
+   "label": "Notice Attachments",
+   "fieldtype": "Table",
+   "options": "Notice Attachment"
+  },
+  {
+   "fieldname": "ai_extractions",
+   "label": "AI Extractions",
+   "fieldtype": "Table",
+   "options": "AI Extraction"
+  },
+  {
+   "fieldname": "ai_prompt_history",
+   "label": "AI Prompt History",
+   "fieldtype": "Table",
+   "options": "AI Prompt History"
+  },
+  {
+   "fieldname": "replies",
+   "label": "Replies",
+   "fieldtype": "Table",
+   "options": "Reply"
+  },
+  {
+   "fieldname": "deadlines",
+   "label": "Deadlines",
+   "fieldtype": "Table",
+   "options": "Deadline"
+  },
+  {
+   "fieldname": "supporting_documents",
+   "label": "Supporting Documents",
+   "fieldtype": "Table",
+   "options": "Supporting Document"
   }
  ],
  "permissions": [
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
-   "if_owner": 0,
-   "import": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "select": 0,
    "share": 1,
-   "submit": 0,
    "write": 1,
    "permlevel": 0
   }

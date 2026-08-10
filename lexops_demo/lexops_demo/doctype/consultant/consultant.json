@@ -6,47 +6,47 @@
  "istable": 0,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "title_field": "consultant_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
+   "fieldname": "naming_series",
+   "label": "Series",
+   "fieldtype": "Select",
+   "options": "CONS-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "consultant_name",
+   "label": "Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "e.g. \"CA Rakesh Nair\", \"Adv. Preethi Subramaniam\""
+  },
+  {
    "fieldname": "user",
    "label": "User",
    "fieldtype": "Link",
-   "options": "User"
+   "options": "User",
+   "description": "Login credential, if the consultant is internal staff with platform access"
   },
   {
    "fieldname": "title",
    "label": "Title",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "e.g. \"Senior GST Consultant\", \"Sr. Counsel \u2014 GST Fraud\""
   },
   {
-   "fieldname": "firm__chamber",
+   "fieldname": "firm_chamber",
    "label": "Firm / Chamber",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "e.g. \"Nair & Associates, Pune\""
   },
   {
    "fieldname": "specialisation",
@@ -54,38 +54,39 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "email__phone",
-   "label": "Email / Phone",
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "phone",
+   "label": "Phone",
    "fieldtype": "Data"
   },
   {
    "fieldname": "avatar_initials_colour",
-   "label": "Avatar Initials /Colour",
+   "label": "Avatar Initials / Colour",
    "fieldtype": "Data"
   },
   {
    "fieldname": "active",
    "label": "Active",
-   "fieldtype": "Check"
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "default": 1
   }
  ],
  "permissions": [
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
-   "if_owner": 0,
-   "import": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "select": 0,
    "share": 1,
-   "submit": 0,
    "write": 1,
    "permlevel": 0
   }

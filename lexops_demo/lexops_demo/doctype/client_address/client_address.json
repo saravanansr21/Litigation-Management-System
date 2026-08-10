@@ -3,39 +3,31 @@
  "name": "Client Address",
  "module": "LexOps Demo",
  "custom": 0,
- "istable": 0,
+ "istable": 1,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
+   "fieldname": "address_line",
+   "label": "Address Line",
+   "fieldtype": "Small Text",
+   "reqd": 1
+  },
+  {
    "fieldname": "city",
    "label": "City",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "state",
+   "label": "State",
+   "fieldtype": "Link",
+   "options": "State"
   },
   {
    "fieldname": "pincode",
@@ -43,36 +35,10 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "state",
-   "label": "State",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "address_type",
    "label": "Address Type",
    "fieldtype": "Select",
    "options": "Registered\nBranch\nCorrespondence"
-  }
- ],
- "permissions": [
-  {
-   "amend": 0,
-   "cancel": 0,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "if_owner": 0,
-   "import": 0,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "select": 0,
-   "share": 1,
-   "submit": 0,
-   "write": 1,
-   "permlevel": 0
   }
  ]
 }

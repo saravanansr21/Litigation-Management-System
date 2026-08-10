@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class RaisedBy(Document):
+class SupportTicket(Document):
 	pass

@@ -1,6 +1,6 @@
 {
  "doctype": "DocType",
- "name": "Client Report",
+ "name": "Support Ticket",
  "module": "LexOps Demo",
  "custom": 0,
  "istable": 0,
@@ -17,45 +17,43 @@
    "fieldname": "naming_series",
    "label": "Series",
    "fieldtype": "Select",
-   "options": "CR-.YYYY.-.#####",
+   "options": "TICKET-.YYYY.-.#####",
    "hidden": 1
   },
   {
-   "fieldname": "client",
-   "label": "Client",
+   "fieldname": "raised_by",
+   "label": "Raised By",
    "fieldtype": "Link",
-   "options": "Client",
+   "options": "User",
    "reqd": 1,
    "in_list_view": 1
   },
   {
-   "fieldname": "report_type",
-   "label": "Report Type",
-   "fieldtype": "Select",
-   "options": "Notice Summary\nState-wise\nConsultant-wise\nRisk Distribution",
+   "fieldname": "subject",
+   "label": "Subject",
+   "fieldtype": "Data",
+   "reqd": 1,
    "in_list_view": 1
   },
   {
-   "fieldname": "period_from",
-   "label": "Period From",
-   "fieldtype": "Date"
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Text"
   },
   {
-   "fieldname": "period_to",
-   "label": "Period To",
-   "fieldtype": "Date"
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Open\nIn Progress\nResolved\nClosed",
+   "in_list_view": 1,
+   "default": "Open"
   },
   {
-   "fieldname": "generated_on",
-   "label": "Generated On",
-   "fieldtype": "Datetime",
-   "read_only": 1
-  },
-  {
-   "fieldname": "file",
-   "label": "File",
-   "fieldtype": "Attach",
-   "description": "Exported PDF / Excel file"
+   "fieldname": "priority",
+   "label": "Priority",
+   "fieldtype": "Select",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "default": "Medium"
   }
  ],
  "permissions": [

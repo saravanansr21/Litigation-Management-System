@@ -6,4 +6,6 @@ from frappe.model.document import Document
 
 
 class Invoice(Document):
-	pass
+	def before_insert(self):
+		if not self.invoice_number:
+			self.invoice_number = self.name

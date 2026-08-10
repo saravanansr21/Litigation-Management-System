@@ -6,4 +6,8 @@ from frappe.model.document import Document
 
 
 class LitigationCase(Document):
-	pass
+	def on_update(self):
+		"""A Final Closure row flips this case's Status to Closed."""
+		if self.get("final_closure"):
+			if self.status != "Closed":
+				self.db_set("status", "Closed")

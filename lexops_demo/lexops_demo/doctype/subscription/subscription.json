@@ -6,91 +6,128 @@
  "istable": 0,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
-   "fieldname": "plan",
-   "label": "Plan",
-   "fieldtype": "Data"
+   "fieldname": "naming_series",
+   "label": "Series",
+   "fieldtype": "Select",
+   "options": "SUB-.YYYY.-.#####",
+   "hidden": 1
   },
   {
-   "fieldname": "start_date__renewal_date",
-   "label": "Start Date / Renewal Date",
+   "fieldname": "firm_profile",
+   "label": "Firm Profile",
+   "fieldtype": "Link",
+   "options": "Firm Profile",
+   "reqd": 1,
+   "description": "The subscribing tenant \u2014 not the end GST client"
+  },
+  {
+   "fieldname": "plan",
+   "label": "Plan",
+   "fieldtype": "Link",
+   "options": "Plan",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "start_date",
+   "label": "Start Date",
    "fieldtype": "Date"
+  },
+  {
+   "fieldname": "renewal_date",
+   "label": "Renewal Date",
+   "fieldtype": "Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "status",
    "label": "Status",
    "fieldtype": "Select",
-   "options": "Active\nCancelled\nPast Due"
+   "options": "Active\nCancelled\nPast Due",
+   "in_list_view": 1,
+   "default": "Active"
   },
   {
-   "fieldname": "notices_used_cap",
-   "label": "Notices Used /Cap",
+   "fieldname": "notices_used",
+   "label": "Notices Used",
+   "fieldtype": "Int",
+   "default": 0
+  },
+  {
+   "fieldname": "notices_cap",
+   "label": "Notices Cap",
    "fieldtype": "Int"
   },
   {
-   "fieldname": "drafts_used__cap",
-   "label": "Drafts Used / Cap",
+   "fieldname": "drafts_used",
+   "label": "Drafts Used",
+   "fieldtype": "Int",
+   "default": 0
+  },
+  {
+   "fieldname": "drafts_cap",
+   "label": "Drafts Cap",
    "fieldtype": "Int"
   },
   {
-   "fieldname": "gstins_connected__cap",
-   "label": "GSTINs Connected / Cap",
+   "fieldname": "gstins_connected",
+   "label": "GSTINs Connected",
+   "fieldtype": "Int",
+   "default": 0
+  },
+  {
+   "fieldname": "gstins_cap",
+   "label": "GSTINs Cap",
    "fieldtype": "Int"
   },
   {
-   "fieldname": "storage_used_cap",
-   "label": "Storage Used /Cap",
+   "fieldname": "storage_used",
+   "label": "Storage Used (GB)",
+   "fieldtype": "Float",
+   "default": 0
+  },
+  {
+   "fieldname": "storage_cap",
+   "label": "Storage Cap (GB)",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "api_calls_used",
+   "label": "API Calls Used",
+   "fieldtype": "Int",
+   "default": 0
+  },
+  {
+   "fieldname": "api_calls_cap",
+   "label": "API Calls Cap",
    "fieldtype": "Int"
   },
   {
-   "fieldname": "api_calls_used_cap",
-   "label": "API Calls Used /Cap",
-   "fieldtype": "Int"
+   "fieldname": "invoices",
+   "label": "Invoices",
+   "fieldtype": "Table",
+   "options": "Invoice"
   }
  ],
  "permissions": [
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
-   "if_owner": 0,
-   "import": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "select": 0,
    "share": 1,
-   "submit": 0,
    "write": 1,
    "permlevel": 0
   }

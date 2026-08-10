@@ -6,47 +6,46 @@
  "istable": 0,
  "issingle": 0,
  "is_submittable": 0,
- "is_tree": 0,
- "is_calendar_and_gantt": 0,
- "editable_grid": 0,
- "quick_entry": 0,
- "track_changes": 0,
- "track_seen": 0,
- "track_views": 0,
- "beta": 0,
- "is_virtual": 0,
- "allow_rename": 1,
- "allow_import": 0,
- "allow_events_in_timeline": 0,
- "allow_auto_repeat": 0,
- "make_attachments_public": 0,
- "show_title_field_in_link": 0,
- "translated_doctype": 0,
- "force_re_route_to_default_view": 0,
- "show_preview_popup": 0,
- "protect_attached_files": 0,
- "has_web_view": 0,
- "allow_guest_to_view": 0,
- "index_web_pages_for_search": 1,
+ "track_changes": 1,
  "engine": "InnoDB",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
  "sort_field": "modified",
  "sort_order": "DESC",
  "fields": [
   {
+   "fieldname": "naming_series",
+   "label": "Series",
+   "fieldtype": "Select",
+   "options": "LX/.YY.-.YY./.####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "invoice_number",
+   "label": "Invoice Number",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Sequential reference, e.g. LX/26-27/0042"
+  },
+  {
    "fieldname": "subscription",
    "label": "Subscription",
    "fieldtype": "Link",
-   "options": "Subscription"
+   "options": "Subscription",
+   "reqd": 1
   },
   {
    "fieldname": "date",
    "label": "Date",
-   "fieldtype": "Date"
+   "fieldtype": "Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "billing_period",
    "label": "Billing Period",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "e.g. \"Jul 2026\""
   },
   {
    "fieldname": "base_amount",
@@ -61,37 +60,40 @@
   {
    "fieldname": "total",
    "label": "Total",
-   "fieldtype": "Currency"
+   "fieldtype": "Currency",
+   "in_list_view": 1
   },
   {
    "fieldname": "status",
    "label": "Status",
    "fieldtype": "Select",
-   "options": "Paid\nUnpaid\nOverdue"
+   "options": "Paid\nUnpaid\nOverdue",
+   "in_list_view": 1,
+   "default": "Unpaid"
   },
   {
-   "fieldname": "pdf_bill",
-   "label": "PDF (Bill)",
+   "fieldname": "pdf",
+   "label": "PDF",
    "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "payments",
+   "label": "Payments",
+   "fieldtype": "Table",
+   "options": "Payment"
   }
  ],
  "permissions": [
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
-   "if_owner": 0,
-   "import": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "select": 0,
    "share": 1,
-   "submit": 0,
    "write": 1,
    "permlevel": 0
   }
