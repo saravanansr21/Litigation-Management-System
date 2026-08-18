@@ -148,10 +148,16 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"lexops_demo.tasks.all"
 # 	],
+    "daily": [
+
+        "lexops_demo.jobs.billing.process_subscription_renewals",
+        "lexops_demo.jobs.billing.mark_overdue_invoices",
+    ],
+
 # 	"daily": [
 # 		"lexops_demo.tasks.daily"
 # 	],
@@ -164,7 +170,7 @@ app_license = "mit"
 # 	"monthly": [
 # 		"lexops_demo.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------

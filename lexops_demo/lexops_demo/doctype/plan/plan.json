@@ -1,68 +1,94 @@
 {
- "doctype": "DocType",
- "name": "Plan",
- "module": "LexOps Demo",
- "custom": 0,
- "istable": 0,
- "issingle": 0,
- "is_submittable": 0,
- "track_changes": 1,
- "engine": "InnoDB",
- "naming_rule": "By fieldname",
- "autoname": "field:plan_name",
- "sort_field": "modified",
- "sort_order": "DESC",
- "fields": [
-  {
-   "fieldname": "plan_name",
-   "label": "Plan Name",
-   "fieldtype": "Select",
-   "options": "Solo\nPractice\nFirm",
-   "reqd": 1,
-   "unique": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "price",
-   "label": "Price",
-   "fieldtype": "Currency",
-   "description": "Monthly base price before GST"
-  },
-  {
-   "fieldname": "notice_cap",
-   "label": "Notice Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "gstin_cap",
-   "label": "GSTIN Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "storage_cap",
-   "label": "Storage Cap (GB)",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "user_cap",
-   "label": "User Cap",
-   "fieldtype": "Data",
-   "description": "Solo/Practice = 1 user, Firm = up to 8"
-  }
- ],
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1,
-   "permlevel": 0
-  }
- ]
+  "doctype": "DocType",
+  "name": "Plan",
+  "module": "LexOps Demo",
+  "custom": 0,
+  "istable": 0,
+  "issingle": 0,
+  "is_submittable": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "naming_rule": "By fieldname",
+  "autoname": "field:plan_name",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "fields": [
+    {
+      "fieldname": "plan_name",
+      "label": "Plan Name",
+      "fieldtype": "Select",
+      "options": "Solo\nPractice\nFirm",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "price",
+      "label": "Price",
+      "fieldtype": "Currency",
+      "description": "Monthly base price before GST"
+    },
+    {
+      "fieldname": "notice_cap",
+      "label": "Notice Cap",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "draft_cap",
+      "label": "Draft Cap",
+      "fieldtype": "Int",
+      "default": 0,
+      "description": "Maximum AI-generated drafts included per billing cycle"
+    },
+    {
+      "fieldname": "gstin_cap",
+      "label": "GSTIN Cap",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "storage_cap",
+      "label": "Storage Cap (GB)",
+      "fieldtype": "Float",
+      "default": 0,
+      "description": "Document storage included per billing cycle"
+    },
+    {
+      "fieldname": "api_calls_cap",
+      "label": "API Calls Cap",
+      "fieldtype": "Int",
+      "default": 0,
+      "description": "API calls included per billing cycle"
+    },
+    {
+      "fieldname": "user_cap",
+      "label": "User Cap",
+      "fieldtype": "Int",
+      "default": 1,
+      "description": "Maximum number of firm users allowed by this plan"
+    },
+    {
+      "fieldname": "overage_rate_per_notice",
+      "label": "Overage Rate Per Notice",
+      "fieldtype": "Currency",
+      "default": 0,
+      "description": "Amount charged for each notice processed beyond the included notice cap"
+    }
+  ],
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1,
+      "permlevel": 0
+    }
+  ]
 }

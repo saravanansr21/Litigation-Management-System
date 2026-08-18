@@ -1,101 +1,112 @@
 {
- "doctype": "DocType",
- "name": "Invoice",
- "module": "LexOps Demo",
- "custom": 0,
- "istable": 0,
- "issingle": 0,
- "is_submittable": 0,
- "track_changes": 1,
- "engine": "InnoDB",
- "naming_rule": "By \"Naming Series\" field",
- "autoname": "naming_series:",
- "sort_field": "modified",
- "sort_order": "DESC",
- "fields": [
-  {
-   "fieldname": "naming_series",
-   "label": "Series",
-   "fieldtype": "Select",
-   "options": "LX/.YY.-.YY./.####",
-   "hidden": 1
-  },
-  {
-   "fieldname": "invoice_number",
-   "label": "Invoice Number",
-   "fieldtype": "Data",
-   "read_only": 1,
-   "in_list_view": 1,
-   "description": "Sequential reference, e.g. LX/26-27/0042"
-  },
-  {
-   "fieldname": "subscription",
-   "label": "Subscription",
-   "fieldtype": "Link",
-   "options": "Subscription",
-   "reqd": 1
-  },
-  {
-   "fieldname": "date",
-   "label": "Date",
-   "fieldtype": "Date",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "billing_period",
-   "label": "Billing Period",
-   "fieldtype": "Data",
-   "description": "e.g. \"Jul 2026\""
-  },
-  {
-   "fieldname": "base_amount",
-   "label": "Base Amount",
-   "fieldtype": "Currency"
-  },
-  {
-   "fieldname": "gst_18",
-   "label": "GST (18%)",
-   "fieldtype": "Currency"
-  },
-  {
-   "fieldname": "total",
-   "label": "Total",
-   "fieldtype": "Currency",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Paid\nUnpaid\nOverdue",
-   "in_list_view": 1,
-   "default": "Unpaid"
-  },
-  {
-   "fieldname": "pdf",
-   "label": "PDF",
-   "fieldtype": "Attach"
-  },
-  {
-   "fieldname": "payments",
-   "label": "Payments",
-   "fieldtype": "Table",
-   "options": "Payment"
-  }
- ],
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1,
-   "permlevel": 0
-  }
- ]
+  "doctype": "DocType",
+  "name": "Invoice",
+  "module": "LexOps Demo",
+  "custom": 0,
+  "istable": 0,
+  "issingle": 0,
+  "is_submittable": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "label": "Series",
+      "fieldtype": "Select",
+      "options": "LX/.YY.-.YY./.####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "invoice_number",
+      "label": "Invoice Number",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1,
+      "description": "Sequential reference, e.g. LX/26-27/0042"
+    },
+    {
+      "fieldname": "subscription",
+      "label": "Subscription",
+      "fieldtype": "Link",
+      "options": "Subscription",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date",
+      "label": "Date",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "billing_period",
+      "label": "Billing Period",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "description": "Billing cycle label, e.g. Jul 2026"
+    },
+    {
+      "fieldname": "base_amount",
+      "label": "Base Amount",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "overage_amount",
+      "label": "Overage Amount",
+      "fieldtype": "Currency",
+      "default": 0,
+      "description": "Charges for usage beyond the plan allowance"
+    },
+    {
+      "fieldname": "gst_18",
+      "label": "GST (18%)",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "total",
+      "label": "Total",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "in_list_view": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Paid\nUnpaid\nOverdue",
+      "reqd": 1,
+      "in_list_view": 1,
+      "default": "Unpaid"
+    },
+    {
+      "fieldname": "pdf",
+      "label": "PDF",
+      "fieldtype": "Attach"
+    }
+  ],
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1,
+      "permlevel": 0
+    }
+  ]
 }

@@ -1,135 +1,145 @@
 {
- "doctype": "DocType",
- "name": "Subscription",
- "module": "LexOps Demo",
- "custom": 0,
- "istable": 0,
- "issingle": 0,
- "is_submittable": 0,
- "track_changes": 1,
- "engine": "InnoDB",
- "naming_rule": "By \"Naming Series\" field",
- "autoname": "naming_series:",
- "sort_field": "modified",
- "sort_order": "DESC",
- "fields": [
-  {
-   "fieldname": "naming_series",
-   "label": "Series",
-   "fieldtype": "Select",
-   "options": "SUB-.YYYY.-.#####",
-   "hidden": 1
-  },
-  {
-   "fieldname": "firm_profile",
-   "label": "Firm Profile",
-   "fieldtype": "Link",
-   "options": "Firm Profile",
-   "reqd": 1,
-   "description": "The subscribing tenant \u2014 not the end GST client"
-  },
-  {
-   "fieldname": "plan",
-   "label": "Plan",
-   "fieldtype": "Link",
-   "options": "Plan",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "start_date",
-   "label": "Start Date",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "renewal_date",
-   "label": "Renewal Date",
-   "fieldtype": "Date",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Active\nCancelled\nPast Due",
-   "in_list_view": 1,
-   "default": "Active"
-  },
-  {
-   "fieldname": "notices_used",
-   "label": "Notices Used",
-   "fieldtype": "Int",
-   "default": 0
-  },
-  {
-   "fieldname": "notices_cap",
-   "label": "Notices Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "drafts_used",
-   "label": "Drafts Used",
-   "fieldtype": "Int",
-   "default": 0
-  },
-  {
-   "fieldname": "drafts_cap",
-   "label": "Drafts Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "gstins_connected",
-   "label": "GSTINs Connected",
-   "fieldtype": "Int",
-   "default": 0
-  },
-  {
-   "fieldname": "gstins_cap",
-   "label": "GSTINs Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "storage_used",
-   "label": "Storage Used (GB)",
-   "fieldtype": "Float",
-   "default": 0
-  },
-  {
-   "fieldname": "storage_cap",
-   "label": "Storage Cap (GB)",
-   "fieldtype": "Float"
-  },
-  {
-   "fieldname": "api_calls_used",
-   "label": "API Calls Used",
-   "fieldtype": "Int",
-   "default": 0
-  },
-  {
-   "fieldname": "api_calls_cap",
-   "label": "API Calls Cap",
-   "fieldtype": "Int"
-  },
-  {
-   "fieldname": "invoices",
-   "label": "Invoices",
-   "fieldtype": "Table",
-   "options": "Invoice"
-  }
- ],
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1,
-   "permlevel": 0
-  }
- ]
+  "doctype": "DocType",
+  "name": "Subscription",
+  "module": "LexOps Demo",
+  "custom": 0,
+  "istable": 0,
+  "issingle": 0,
+  "is_submittable": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "label": "Series",
+      "fieldtype": "Select",
+      "options": "SUB-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "firm_profile",
+      "label": "Firm Profile",
+      "fieldtype": "Link",
+      "options": "Firm Profile",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "The subscribing tenant — not the end GST client"
+    },
+    {
+      "fieldname": "plan",
+      "label": "Plan",
+      "fieldtype": "Link",
+      "options": "Plan",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "pending_plan",
+      "label": "Pending Plan",
+      "fieldtype": "Link",
+      "options": "Plan",
+      "description": "Plan scheduled to take effect from the next billing cycle"
+    },
+    {
+      "fieldname": "start_date",
+      "label": "Start Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "renewal_date",
+      "label": "Renewal Date",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Active\nCancelled\nPast Due",
+      "reqd": 1,
+      "in_list_view": 1,
+      "default": "Active"
+    },
+    {
+      "fieldname": "notices_used",
+      "label": "Notices Used",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "notices_cap",
+      "label": "Notices Cap",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "drafts_used",
+      "label": "Drafts Used",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "drafts_cap",
+      "label": "Drafts Cap",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "gstins_connected",
+      "label": "GSTINs Connected",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "gstins_cap",
+      "label": "GSTINs Cap",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "storage_used",
+      "label": "Storage Used (GB)",
+      "fieldtype": "Float",
+      "default": 0
+    },
+    {
+      "fieldname": "storage_cap",
+      "label": "Storage Cap (GB)",
+      "fieldtype": "Float",
+      "default": 0
+    },
+    {
+      "fieldname": "api_calls_used",
+      "label": "API Calls Used",
+      "fieldtype": "Int",
+      "default": 0
+    },
+    {
+      "fieldname": "api_calls_cap",
+      "label": "API Calls Cap",
+      "fieldtype": "Int",
+      "default": 0
+    }
+  ],
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1,
+      "permlevel": 0
+    }
+  ]
 }

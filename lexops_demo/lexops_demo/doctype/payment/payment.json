@@ -1,70 +1,74 @@
 {
- "doctype": "DocType",
- "name": "Payment",
- "module": "LexOps Demo",
- "custom": 0,
- "istable": 0,
- "issingle": 0,
- "is_submittable": 0,
- "track_changes": 1,
- "engine": "InnoDB",
- "naming_rule": "By \"Naming Series\" field",
- "autoname": "naming_series:",
- "sort_field": "modified",
- "sort_order": "DESC",
- "fields": [
-  {
-   "fieldname": "naming_series",
-   "label": "Series",
-   "fieldtype": "Select",
-   "options": "PAY-.YYYY.-.#####",
-   "hidden": 1
-  },
-  {
-   "fieldname": "invoice",
-   "label": "Invoice",
-   "fieldtype": "Link",
-   "options": "Invoice",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "paid_on",
-   "label": "Paid On",
-   "fieldtype": "Date",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "amount",
-   "label": "Amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "payment_method",
-   "label": "Payment Method",
-   "fieldtype": "Select",
-   "options": "Card\nNet Banking\nUPI\nBank Transfer"
-  },
-  {
-   "fieldname": "reference_transaction_id",
-   "label": "Reference / Transaction ID",
-   "fieldtype": "Data"
-  }
- ],
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1,
-   "permlevel": 0
-  }
- ]
+  "doctype": "DocType",
+  "name": "Payment",
+  "module": "LexOps Demo",
+  "custom": 0,
+  "istable": 0,
+  "issingle": 0,
+  "is_submittable": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "label": "Series",
+      "fieldtype": "Select",
+      "options": "PAY-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "invoice",
+      "label": "Invoice",
+      "fieldtype": "Link",
+      "options": "Invoice",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "paid_on",
+      "label": "Paid On",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "label": "Amount",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_method",
+      "label": "Payment Method",
+      "fieldtype": "Select",
+      "options": "Card\nNet Banking\nUPI\nBank Transfer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reference_transaction_id",
+      "label": "Reference / Transaction ID",
+      "fieldtype": "Data",
+      "reqd": 1
+    }
+  ],
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1,
+      "permlevel": 0
+    }
+  ]
 }
